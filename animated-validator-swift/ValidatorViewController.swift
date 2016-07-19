@@ -16,6 +16,12 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
+    private var currentTextField: UITextField?
+    var email: String
+    var emailConfirm: String
+    var phone: String
+    var password: String
+    var passwordConfirm: String
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,44 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
         self.passwordConfirmTextField.accessibilityLabel = Constants.PASSWORDCONFIRMTEXTFIELD
         
         self.submitButton.enabled = false
+        
+        emailTextField.delegate = self
+        emailTextField.tag = 1
+        emailConfirmationTextField.delegate = self
+        emailConfirmationTextField.tag = 2
+        phoneTextField.delegate = self
+        phoneTextField.tag = 3
+        passwordTextField.delegate = self
+        passwordTextField.tag = 4
+        passwordConfirmTextField.delegate = self
+        passwordConfirmTextField.tag = 5
+        
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        currentTextField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        switch textField.tag {
+        case 1:
+            self.email = textField.text!
+        case 2:
+            self.emailConfirm = textField.text!
+        case 3:
+            self.phone = textField.text!
+        case 4:
+            self.password = textField.text!
+        case 5:
+            self.passwordConfirm = textField.text!
+        default:
+            self.email = "None"
+            self.emailConfirm = "None"
+            self.phone = "None"
+            self.password = "None"
+            self.passwordConfirm = "None"
+        }
     }
 
 }
