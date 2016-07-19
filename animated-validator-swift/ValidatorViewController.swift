@@ -17,12 +17,19 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     private var currentTextField: UITextField?
-    var email: String
-    var emailConfirm: String
-    var phone: String
-    var password: String
-    var passwordConfirm: String
-
+    var email: String?
+    var emailConfirm: String?
+    var phone: String?
+    var password: String?
+    var passwordConfirm: String?
+    
+    override class func initialize() {
+        self.email = nil
+        self.emailConfirm = nil
+        self.phone = nil
+        self.password = nil
+        self.passwordConfirm = nil 
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     
