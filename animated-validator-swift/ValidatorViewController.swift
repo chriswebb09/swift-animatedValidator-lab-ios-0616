@@ -22,14 +22,7 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
     var phone: String?
     var password: String?
     var passwordConfirm: String?
-    
-    override class func initialize() {
-        self.email = nil
-        self.emailConfirm = nil
-        self.phone = nil
-        self.password = nil
-        self.passwordConfirm = nil 
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -61,7 +54,8 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
         currentTextField = textField
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(textField: UITextField)
+    {
         switch textField.tag {
         case 1:
             self.email = textField.text!
@@ -80,6 +74,24 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
             self.password = "None"
             self.passwordConfirm = "None"
         }
+    }
+    
+    func validEmail() -> Bool {
+        if self.email == self.emailConfirm {
+            return true
+        }
+        return false
+    }
+    
+    func validPassword() -> Bool {
+        if self.password == self.passwordConfirm {
+            return true
+        }
+        return false
+    }
+    
+    func validPhone() -> Bool {
+        return false 
     }
 
 }
