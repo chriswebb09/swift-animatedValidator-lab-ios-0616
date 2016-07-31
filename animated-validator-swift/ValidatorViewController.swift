@@ -59,14 +59,31 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
         switch textField.tag {
         case 1:
             self.email = textField.text!
+            if !self.validEmail() {
+                animatedValidator(textField)
+            }
         case 2:
             self.emailConfirm = textField.text!
+            if !self.validEmailConfirm() {
+                animatedValidator(textField)
+            }
         case 3:
             self.phone = textField.text!
+            if !self.validPhone() {
+                animatedValidator(textField)
+            }
         case 4:
             self.password = textField.text!
+            if !self.validPassword() {
+                animatedValidator(textField)
+            }
         case 5:
             self.passwordConfirm = textField.text!
+            if !self.validPasswordConfirm() {
+                animatedValidator(textField)
+            } else if self.validPasswordConfirm() {
+                self.submitButton.enabled = true
+            }
         default:
             self.email = "None"
             self.emailConfirm = "None"
@@ -77,21 +94,73 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     func validEmail() -> Bool {
-        if self.email == self.emailConfirm {
-            return true
+        let emailValidators = [".", "@"]
+        if let emailString = email {
+            for character in emailString.characters {
+                if emailValidators.contains(String(character)) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func validEmailConfirm() -> Bool {
+        if let confirmedEmail = self.emailConfirm {
+            if confirmedEmail == self.email && self.validEmail() {
+                return true
+            }
         }
         return false
     }
     
     func validPassword() -> Bool {
-        if self.password == self.passwordConfirm {
-            return true
+        if let passwordValid = self.password {
+            if passwordValid.length >= 7 {
+                return true
+            }
         }
         return false
     }
     
     func validPhone() -> Bool {
+        if let phoneString = self.phone {
+            if phoneString.length >= 6 {
+                return true
+            }
+            
+        }
         return false 
+    }
+    
+    
+    func validPhoneNumber() -> Bool {
+        if let phoneNumber = self.phone {
+            if phoneNumber.length  == 7 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func validPasswordConfirm() -> Bool {
+        if let confirmedPassword = self.passwordConfirm {
+            if confirmedPassword == self.password && self.validPassword(){
+                return true
+            }
+        }
+        return false
+    }
+
+    
+    func animatedValidator(textfield: UITextField) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(textfield.center.x - 10, textfield.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(textfield.center.x + 10, textfield.center.y))
+        textfield.layer.addAnimation(animation, forKey: "position")
     }
 
 }

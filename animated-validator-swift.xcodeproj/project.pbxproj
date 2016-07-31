@@ -18,6 +18,7 @@
 		1BC3A3271D242909007249EE /* AnimatedValidatorSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC3A3261D242909007249EE /* AnimatedValidatorSwiftTests.swift */; };
 		614EF00AD7A44F8CE6EDDAEA /* Pods_animated_validator_swiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D506C47CB98E80EAEEBF92 /* Pods_animated_validator_swiftUITests.framework */; };
 		7252E457A7FC40F7F981CE72 /* Pods_animated_validator_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C122119BECAA60CD1470309 /* Pods_animated_validator_swiftTests.framework */; };
+		AF2DA4981D4E9AF20095C847 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA4971D4E9AF20095C847 /* Extensions.swift */; };
 		E113EED85F0875ED4DF0B697 /* Pods_animated_validator_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68667BCBEDC6B1DF663113C /* Pods_animated_validator_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		86D506C47CB98E80EAEEBF92 /* Pods_animated_validator_swiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_animated_validator_swiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0BDFC06A5EE781C104670E /* Pods-animated-validator-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animated-validator-swiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-animated-validator-swiftTests/Pods-animated-validator-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		970BF69A64829DBB0AA9760A /* Pods-animated-validator-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animated-validator-swiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-animated-validator-swiftTests/Pods-animated-validator-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF2DA4971D4E9AF20095C847 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D26BDFD20D9E704B03E90A1B /* Pods-animated-validator-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animated-validator-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-animated-validator-swift/Pods-animated-validator-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		E68667BCBEDC6B1DF663113C /* Pods_animated_validator_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_animated_validator_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 			children = (
 				1B136C011D216FBD004DC0F3 /* AppDelegate.swift */,
 				1B136C711D217B96004DC0F3 /* ValidatorViewController.swift */,
+				AF2DA4971D4E9AF20095C847 /* Extensions.swift */,
 				1B136C751D217D69004DC0F3 /* Constants.swift */,
 				1B136C051D216FBD004DC0F3 /* Main.storyboard */,
 				1B136C081D216FBD004DC0F3 /* Assets.xcassets */,
@@ -436,6 +439,7 @@
 				1B136C721D217B96004DC0F3 /* ValidatorViewController.swift in Sources */,
 				1B136C021D216FBD004DC0F3 /* AppDelegate.swift in Sources */,
 				1B136C761D217D69004DC0F3 /* Constants.swift in Sources */,
+				AF2DA4981D4E9AF20095C847 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
